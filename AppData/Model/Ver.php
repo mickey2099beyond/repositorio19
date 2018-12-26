@@ -82,13 +82,12 @@
 
 
            public function getAlumnsh(){
-               $sql="SELECT m.desc_materia,u.id_usuario,p.nombre,p.ap_p,p.ap_m,c.calificacion
-               FROM persona p,usuario u, calificaciones c,materias m
-               WHERE p.id_usuario=u.id_usuario
-               AND u.id_tipo_usuario=1
-               AND p.id_persona=c.id_persona
-               AND m.id_materia=c.id_materia
-               ORDER BY p.ap_p ASC";
+               $sql="SELECT m.id_materia, m.desc_materia FROM materias m, usuario u, asigna_mat a, persona p
+               WHERE a.id_persona=p.id_persona
+               AND a.id_materia=m.id_materia
+               AND u.id_usuario=p.id_persona
+                AND u.id_tipo_usuario='2'
+               AND a.id_persona='19'";
                $datos=$this->conexion->QueryResultado($sql);
                 return $datos;
           }
@@ -98,6 +97,23 @@ $sql="SELECT * FROM materias
 WHERE id_materia";
 $datos=$this->conexion->QueryResultado($sql);
    return $datos;
+}
+public function getAlumnshh(){
+    $sql="SELECT m.id_materia, m.desc_materia FROM materias m, usuario u, asigna_mat a, persona p
+    WHERE a.id_persona=p.id_persona
+    AND a.id_materia=m.id_materia
+    AND u.id_usuario=p.id_persona
+     AND u.id_tipo_usuario='2'
+    AND a.id_persona='19'";
+    $datos=$this->conexion->QueryResultado($sql);
+     return $datos;
+}
+
+public function getDataa(){
+$sql="SELECT * FROM materias
+WHERE id_materia";
+$datos=$this->conexion->QueryResultado($sql);
+return $datos;
 }
         public function getcal(){
             $sql="SELECT c.calificacion, p.id_persona, u.id_usuario, p.nombre, p.ap_p, p.ap_m

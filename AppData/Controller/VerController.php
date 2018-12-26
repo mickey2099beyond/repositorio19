@@ -13,13 +13,19 @@
         $datos[1]=$this->ver->getAlumnsh();
         return $datos;
       }
+      function indx()
+      {
+        // $datos[0]=mysqli_fetch_assoc($this->ver->getData());
+        $datos[1]=$this->ver->getcal();
+        return $datos;
+      }
       function ver(){
       }
 
       function select(){
         $datos=$this->ver->getMateriash();
         return $datos;
-        
+
       }
       function eliminar($id){
           $this->ver->set("id",$id[0]);

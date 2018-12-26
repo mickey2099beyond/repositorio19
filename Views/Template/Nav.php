@@ -31,8 +31,14 @@ session_start();
 
                 <li class="nav-item dropdown" style="margin-left:1em;">
                     <a class="nav-link   " data-toggle="dropdown" href="#" id="dropdown01" role="button" aria-haspopup="true" aria-expanded="false">Calificaciones</a>
+                    
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
+
+
+
+
                         <a class="dropdown-item" href="<?php echo URL; ?>Ver">calificacion</a>
+
                     </div>
 
                 </li>
